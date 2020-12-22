@@ -1,5 +1,53 @@
+# COMMANDS
 
-## Magento 1 create user using SQL
+## Recently used
+
+Find file name
+
+ ` # find ./app/ -name "registration.php" `
+ 
+Find string 
+
+ ` # grep -Rni "lol" ./app/code/ ` 
+ ` # grep -rnw "gabarit-center" --include=*.{phtml} app/ ` 
+
+
+## MySQL
+
+Dump mysql database
+
+` # mysqldump -u magento2_user -p magento2_db > magento2_db-20201110.sql `
+
+` # mysqldump ---single-transaction -u magento2_user -p magento2_db > magento2_db-20201110.sql `
+
+` # mysqldump -u magento2_user -p magento2_db | gzip > magento2_db-20201110.sql.gz `
+
+Create new user and assign permission
+
+```
+CREATE USER 'magento2_user'@'localhost' IDENTIFIED BY 'password123';
+
+GRANT ALL PRIVILEGES ON magento2_db.* TO 'magento2_user'@'localhost';
+
+GRANT SELECT,LOCK TABLES ON magento2_db.* TO 'magento2_user'@'localhost';
+
+FLUSH PRIVILEGES;
+
+```
+
+Change password
+
+` # ALTER USER magento2_user@localhost IDENTIFIED BY 'password123'; `
+
+Check user permission
+
+` # SHOW GRANTS FOR 'magento2_user'@'localhost'; `
+
+Assign lock previleges if error in dump
+
+` # GRANT SELECT,LOCK TABLES ON iturbo_v4_20201110.* TO 'magento2_iturbo'@'localhost';`
+
+### Magento 1 create user using SQL
 
 ```
 LOCK TABLES `admin_role` WRITE , `admin_user` WRITE;
@@ -18,7 +66,7 @@ UNLOCK TABLES;
 
 ```
 
-## To change Attribute datatype Magento 2
+### To change Attribute datatype Magento 2
 
 ```
 
