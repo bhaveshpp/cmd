@@ -9,6 +9,7 @@ Find file name
 Find string 
 
  ` # grep -Rni "lol" ./app/code/ ` 
+ 
  ` # grep -rnw "gabarit-center" --include=*.{phtml} app/ ` 
 
 
