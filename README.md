@@ -107,3 +107,7 @@ SELECT `attribute_id`,`store_id`,`entity_id`,`value`  FROM `catalog_product_enti
 IN (SELECT `attribute_id` FROM `eav_attribute` WHERE `attribute_code` IN ('ref_fabricant_mp','oem_mp'));
 
 ```
+
+## Sync live site with dev
+
+[Script for ubuntu](https://bhaveshpp.github.io/cmd/sync-with-live/)
