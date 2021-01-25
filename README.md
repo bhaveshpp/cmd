@@ -129,5 +129,5 @@ IN (SELECT `attribute_id` FROM `eav_attribute` WHERE `attribute_code` IN ('ref_f
 
 ## Sync live site with dev
 
-[Script for ubuntu](https://bhaveshpp.github.io/cmd/sync-with-live/)
+[Script for ubuntu](https://bhaveshpp.github.io/cmd/linux/sync-with-live/)
 
