@@ -2,6 +2,12 @@
 
 ## Recently used
 
+### Backup Magento 
+
+`
+zip -r pub-20210202.zip app/ bin/ dev/ lib/ phpserver/ setup/ vendor/ .htaccess composer.json composer.lock index.php .user.ini pub/ -x pub/media/**\* pub/static/frontend/**\* pub/static/adminhtml/**\*
+`
+
 ### install Magento
 
 `
