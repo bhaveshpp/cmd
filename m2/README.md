@@ -18,3 +18,8 @@
 # sudo php bin/magento setup:install --base-url=http://192.168.0.100/magento/ --db-host=localhost --db-name=magento --db-user=magento --db-password=magento --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com --admin-user=admin --admin-password=admin@123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1
 
 ```
+## Get DB info
+
+```
+grep -n "host" -A 4 app/etc/env.php
+```
