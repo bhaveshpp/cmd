@@ -4,9 +4,21 @@
 
 ### Backup Magento 
 
-`
-zip -r pub-20210202.zip app/ bin/ dev/ lib/ phpserver/ setup/ vendor/ .htaccess composer.json composer.lock index.php .user.ini pub/ -x pub/media/**\* pub/static/frontend/**\* pub/static/adminhtml/**\*
-`
+Code
+
+```
+
+# zip -r code-20210202.zip app/ bin/ dev/ lib/ phpserver/ setup/ vendor/ .htaccess composer.json composer.lock index.php .user.ini pub/ -x pub/media/**\* pub/static/frontend/**\* pub/static/adminhtml/**\*
+
+```
+
+DB
+
+```
+# mysqldump -u magento2_user -p magento2_db | gzip > magento2_db-20201110.sql.gz
+
+```
+
 
 ### install Magento
 
