@@ -145,6 +145,17 @@ IN (SELECT `attribute_id` FROM `eav_attribute` WHERE `attribute_code` IN ('ref_f
 
 ```
 
+```
+#10 5 */06 * * cat /home/magento_user/Backup/db-bkp-20210204.sql | mysql -u root -pPass123 db1_new
+
+```
+
+```
+php bin/magento i18n:collect-phrases -o "/home/site/public_html/app/i18n/bhaveshpp/fr_fr/temp.csv" /home/site/public_html/vendor/aheadworks/module-reward-points/
+
+```
+
+
 ## Sync live site with dev
 
 [Script for ubuntu](https://bhaveshpp.github.io/cmd/linux/sync-with-live/)
