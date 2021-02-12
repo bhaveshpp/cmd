@@ -19,6 +19,21 @@ DB
 
 ```
 
+Code 
+
+```
+tar -czvf ~/multi_dump.tar.gz --exclude=var/cache --exclude=var/session --exclude=var/log --exclude=var/tmp --exclude=var/export --exclude=var/report --exclude=var/backups --exclude='media/*import*' --exclude=media/tmp --exclude=media/downloadable --exclude=media/catalog . && echo OK
+
+tar -czvf /var/www/html/magento1/backup/multi_dump_without_media.tar.gz --exclude=var/cache --exclude=var/session --exclude=var/log --exclude=var/tmp --exclude=var/export --exclude=var/report --exclude=var/backups --exclude='media/*import*' --exclude=media/tmp --exclude=media/downloadable --exclude=media/catalog --exclude=media/amasty/amoptmobile --exclude=media/amasty/webp --exclude=static/frontend --exclude=static/adminhtml  --exclude=backup --exclude=media/amasty/amoptimizer_dump --exclude=media/amasty/amopttablet . && echo OK
+
+```
+Database
+
+```
+mysqldump --single-transaction --add-drop-table -h <host> -u <user> -p <db_name> | gzip > dump.sql.gz
+
+```
+
 
 ### install Magento
 
