@@ -23,3 +23,20 @@
 ```
 grep -n "host" -A 4 app/etc/env.php
 ```
+## Update config
+
+```
+web/unsecure/base_url - https://dev.site.fr/
+web/unsecure/base_static_url - {{unsecure_base_url}}pub/static/
+web/unsecure/base_media_url - {{unsecure_base_url}}pub/media/
+web/unsecure/base_link_url - https://dev2.site.fr/
+web/secure/base_url - https://dev2.site.fr/
+web/secure/base_static_url -
+web/secure/base_media_url -
+
+richsnippets/organization/url - https://site.Fr
+richsnippets/website/siteurl - https://dev2.site.fr/
+
+php bin/magento config:set web/unsecure/base_url https://dev2.iturbo.fr/pub/ && php bin/magento config:set web/unsecure/base_static_url {{unsecure_base_url}}static/ && php bin/magento config:set web/unsecure/base_media_url {{unsecure_base_url}}media/ && php bin/magento config:set web/unsecure/base_link_url https://dev2.iturbo.fr/pub/ && php bin/magento config:set web/secure/base_url https://dev2.iturbo.fr/pub/ && php bin/magento config:set web/secure/base_static_url {{secure_base_url}}static/ && php bin/magento config:set web/secure/base_media_url {{secure_base_url}}media/
+
+```
