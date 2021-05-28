@@ -1,3 +1,4 @@
 git add .
-git commit -m "adding usefull command..."
-git push 
+git status
+git commit -m "content update"
+git push origin master
