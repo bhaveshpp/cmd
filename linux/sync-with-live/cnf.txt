@@ -1,3 +1,0 @@
-[client]
-user=devmagento@dev.site.com
-password=password123

@@ -1,37 +1,53 @@
 # Magento 2 All Commands
 
-### install Magento
+### comman commands
 
-`
- composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition .
-`
+- Setup upgrade
 
-```
-# php -d memory_limit=-1  composer.phar create-project --repository-url=https://repo.magento.com/ magento/project-community-edition --ignore-platform-reqs  -vvv
-```
+```bash
+
+ php bin/magento setup:upgrade
 
 ```
-# php -d memory_limit=-1  composer.phar require magento/data-migration-tool:2.2.0 --ignore-platform-reqs  -vvv
-```
+- Compilation 
+
+```bash
+
+ php bin/magento setup:di:compile
 
 ```
-# sudo php bin/magento setup:install --base-url=http://192.168.0.100/magento/ --db-host=localhost --db-name=magento --db-user=magento --db-password=magento --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com --admin-user=admin --admin-password=admin@123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1
+- Deployment
 
-```
-## Deploy frontend with perticuler theme
+```bash
 
-```
-php bin/magento s:s:d en_US fr_FR -a frontend -t Smartwave/porto_child
+ php bin/magento setup:static:content:deploy
+ 
+ php bin/magento setup:static:content:deploy -f
+ 
+ php bin/magento setup:static:content:deploy -f en_GB en_US fr_FR
+
+ php bin/magento setup:static:content:deploy -f -a frontend -t Smartwave/porto_child
+
 ```
 
 ## Get DB info
 
-```
-grep -n "host" -A 4 app/etc/env.php
+```bash
+
+ grep -n "host" -A 4 app/etc/env.php
+
+ grep [\']db[\'] -A 20 app/etc/env.php | grep dbname | head -n1 | sed "s/.*[=][>][ ]*[']//" | sed "s/['][,]//"
+
+ grep [\']db[\'] -A 20 app/etc/env.php | grep host | head -n1 | sed "s/.*[=][>][ ]*[']//" | sed "s/['][,]//"
+
+ grep [\']db[\'] -A 20 app/etc/env.php | grep username | head -n1 | sed "s/.*[=][>][ ]*[']//" | sed "s/['][,]//"
+
+ grep [\']db[\'] -A 20 app/etc/env.php | grep password | head -n1 | sed "s/.*[=][>][ ]*[']//" | sed "s/[']$//" | sed "s/['][,]//"
+
 ```
 ## Update config
 
-```
+```note
 web/unsecure/base_url - https://dev.site.fr/
 web/unsecure/base_static_url - {{unsecure_base_url}}pub/static/
 web/unsecure/base_media_url - {{unsecure_base_url}}pub/media/
@@ -43,6 +59,19 @@ web/secure/base_media_url -
 richsnippets/organization/url - https://site.Fr
 richsnippets/website/siteurl - https://dev2.site.fr/
 
-php bin/magento config:set web/unsecure/base_url https://dev2.iturbo.fr/pub/ && php bin/magento config:set web/unsecure/base_static_url {{unsecure_base_url}}static/ && php bin/magento config:set web/unsecure/base_media_url {{unsecure_base_url}}media/ && php bin/magento config:set web/unsecure/base_link_url https://dev2.iturbo.fr/pub/ && php bin/magento config:set web/secure/base_url https://dev2.iturbo.fr/pub/ && php bin/magento config:set web/secure/base_static_url {{secure_base_url}}static/ && php bin/magento config:set web/secure/base_media_url {{secure_base_url}}media/
+```
+Update url in db using set config
+
+```bash
+
+# php bin/magento config:set web/unsecure/base_url https://dev2.iturbo.fr/pub/ && php bin/magento config:set web/unsecure/base_static_url {{unsecure_base_url}}static/ && php bin/magento config:set web/unsecure/base_media_url {{unsecure_base_url}}media/ && php bin/magento config:set web/unsecure/base_link_url https://dev2.iturbo.fr/pub/ && php bin/magento config:set web/secure/base_url https://dev2.iturbo.fr/pub/ && php bin/magento config:set web/secure/base_static_url {{secure_base_url}}static/ && php bin/magento config:set web/secure/base_media_url {{secure_base_url}}media/
+
+```
+
+generate i18n for perticuler module
+
+```bash
+
+# php bin/magento i18n:collect-phrases -o "/home/site/public_html/app/i18n/bhaveshpp/fr_fr/temp.csv" /home/site/public_html/vendor/aheadworks/module-reward-points/
 
 ```
