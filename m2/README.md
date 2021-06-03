@@ -67,6 +67,12 @@ Update url in db using set config
 # php bin/magento config:set web/unsecure/base_url https://dev2.iturbo.fr/pub/ && php bin/magento config:set web/unsecure/base_static_url {{unsecure_base_url}}static/ && php bin/magento config:set web/unsecure/base_media_url {{unsecure_base_url}}media/ && php bin/magento config:set web/unsecure/base_link_url https://dev2.iturbo.fr/pub/ && php bin/magento config:set web/secure/base_url https://dev2.iturbo.fr/pub/ && php bin/magento config:set web/secure/base_static_url {{secure_base_url}}static/ && php bin/magento config:set web/secure/base_media_url {{secure_base_url}}media/
 
 ```
+change static and media url path
+
+```bash
+php bin/magento config:set web/unsecure/base_static_url {{unsecure_base_url}}pub/static/ && php bin/magento config:set web/unsecure/base_media_url {{unsecure_base_url}}pub/media/ && php bin/magento config:set web/secure/base_static_url {{unsecure_base_url}}pub/static/ && php bin/magento config:set web/secure/base_media_url {{unsecure_base_url}}pub/media/
+
+```
 
 generate i18n for perticuler module
 
