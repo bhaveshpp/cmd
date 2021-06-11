@@ -46,3 +46,16 @@ richsnippets/website/siteurl - https://dev2.site.fr/
 php bin/magento config:set web/unsecure/base_url https://dev2.iturbo.fr/pub/ && php bin/magento config:set web/unsecure/base_static_url {{unsecure_base_url}}static/ && php bin/magento config:set web/unsecure/base_media_url {{unsecure_base_url}}media/ && php bin/magento config:set web/unsecure/base_link_url https://dev2.iturbo.fr/pub/ && php bin/magento config:set web/secure/base_url https://dev2.iturbo.fr/pub/ && php bin/magento config:set web/secure/base_static_url {{secure_base_url}}static/ && php bin/magento config:set web/secure/base_media_url {{secure_base_url}}media/
 
 ```
+
+## Code dump
+
+```
+# zip -r dev-balloon-20210611.zip ./* ./.* -x  pub/static/frontend/**\* pub/static/adminhtml/**\* var/cache/**\* var/view_preprocessed/**\* generated/code/**\*
+```
+
+tar.gz zip
+
+```
+# tar -czvf --exclude=dev-20210611.zip --exclude=pub/static/frontend --exclude=pub/static/adminhtml --exclude=pub/media/catalog/product/cache/ --exclude=var/cache --exclude=var/view_preprocessed --exclude=var/session --exclude=var/log --exclude=var/tmp --exclude=var/export --exclude=var/report --exclude=var/backups --exclude=vendor-bkp --exclude=generated . && echo OK
+
+```
