@@ -91,6 +91,6 @@ generate i18n for perticuler module
 tar.gz zip
 
 ```
-# tar -czvf --exclude=dev-20210611.zip --exclude=pub/static/frontend --exclude=pub/static/adminhtml --exclude=pub/media/catalog/product/cache/ --exclude=var/cache --exclude=var/view_preprocessed --exclude=var/session --exclude=var/log --exclude=var/tmp --exclude=var/export --exclude=var/report --exclude=var/backups --exclude=vendor-bkp --exclude=generated . && echo OK
+# tar -czvf dev-code-dump-20210611.tar.gz --exclude=pub/static/frontend --exclude=pub/static/adminhtml --exclude=pub/media/catalog/product/cache/ --exclude=var/cache --exclude=var/view_preprocessed --exclude=var/session --exclude=var/log --exclude=var/tmp --exclude=var/export --exclude=var/report --exclude=var/backups --exclude=vendor-bkp --exclude=generated . && echo OK
 
 ```
