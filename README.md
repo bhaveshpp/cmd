@@ -16,7 +16,7 @@ DB
 
 ```bash
 
-# mysqldump -u magento2_user -p magento2_db | gzip > magento2_db-20201110.sql.gz
+ mysqldump -u magento2_user -p magento2_db | gzip > magento2_db-20201110.sql.gz
 
 ```
 
@@ -24,9 +24,9 @@ Code
 
 ```bash
 
-# tar -czvf ~/multi_dump.tar.gz --exclude=var/cache --exclude=var/session --exclude=var/log --exclude=var/tmp --exclude=var/export --exclude=var/report --exclude=var/backups --exclude='media/*import*' --exclude=media/tmp --exclude=media/downloadable --exclude=media/catalog . && echo OK
+ tar -czvf ~/multi_dump.tar.gz --exclude=var/cache --exclude=var/session --exclude=var/log --exclude=var/tmp --exclude=var/export --exclude=var/report --exclude=var/backups --exclude='media/*import*' --exclude=media/tmp --exclude=media/downloadable --exclude=media/catalog . && echo OK
 
-# tar -czvf /var/www/html/magento1/backup/multi_dump_without_media.tar.gz --exclude=var/cache --exclude=var/session --exclude=var/log --exclude=var/tmp --exclude=var/export --exclude=var/report --exclude=var/backups --exclude='media/*import*' --exclude=media/tmp --exclude=media/downloadable --exclude=media/catalog --exclude=media/amasty/amoptmobile --exclude=media/amasty/webp --exclude=static/frontend --exclude=static/adminhtml  --exclude=backup --exclude=media/amasty/amoptimizer_dump --exclude=media/amasty/amopttablet . && echo OK
+ tar -czvf /var/www/html/magento1/backup/multi_dump_without_media.tar.gz --exclude=var/cache --exclude=var/session --exclude=var/log --exclude=var/tmp --exclude=var/export --exclude=var/report --exclude=var/backups --exclude='media/*import*' --exclude=media/tmp --exclude=media/downloadable --exclude=media/catalog --exclude=media/amasty/amoptmobile --exclude=media/amasty/webp --exclude=static/frontend --exclude=static/adminhtml  --exclude=backup --exclude=media/amasty/amoptimizer_dump --exclude=media/amasty/amopttablet . && echo OK
 
 ```
 
@@ -34,7 +34,7 @@ Database
 
 ```bash 
 
-# mysqldump --single-transaction --add-drop-table -h <host> -u <user> -p <db_name> | gzip > dump.sql.gz
+ mysqldump --single-transaction --add-drop-table -h <host> -u <user> -p <db_name> | gzip > dump.sql.gz
 
 ```
 
@@ -43,7 +43,7 @@ Database
 
 ```bash
 
-# composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition .
+ composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition .
 
 ```
 
@@ -51,14 +51,14 @@ with increase php memory limit.
 
 ```bash
 
-# php -d memory_limit=-1  composer.phar create-project --repository-url=https://repo.magento.com/ magento/project-community-edition --ignore-platform-reqs  -vvv
+ php -d memory_limit=-1  composer.phar create-project --repository-url=https://repo.magento.com/ magento/project-community-edition --ignore-platform-reqs  -vvv
 
 ```
 Install specific version
 
 ```bash 
 
-# php -d memory_limit=-1  composer.phar require magento/data-migration-tool:2.2.0 --ignore-platform-reqs  -vvv
+ php -d memory_limit=-1  composer.phar require magento/data-migration-tool:2.2.0 --ignore-platform-reqs  -vvv
 
 ```
 
@@ -66,7 +66,7 @@ Install command
 
 ```bash
 
-# sudo php bin/magento setup:install --base-url=http://192.168.0.100/magento/ --db-host=localhost --db-name=magento --db-user=magento --db-password=magento --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com --admin-user=admin --admin-password=admin@123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1
+ sudo php bin/magento setup:install --base-url=http://192.168.0.100/magento/ --db-host=localhost --db-name=magento --db-user=magento --db-password=magento --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com --admin-user=admin --admin-password=admin@123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1
 
 ```
 
@@ -74,7 +74,7 @@ Find file name
 
 ```bash
 
- # find ./app/ -name "registration.php" 
+ find ./app/ -name "registration.php" 
 
  ```
  
@@ -82,7 +82,7 @@ Find string
 
 ```bash 
 
-# grep -Rni "lol" ./app/code/ 
+ grep -Rni "lol" ./app/code/ 
  
 # grep -rnw "gabarit-center" --include=*.{phtml} app/ 
 
@@ -95,11 +95,11 @@ Dump mysql database
 
 ```bash 
 
- # mysqldump -u magento2_user -p magento2_db > magento2_db-20201110.sql 
+ mysqldump -u magento2_user -p magento2_db > magento2_db-20201110.sql 
 
- # mysqldump ---single-transaction -u magento2_user -p magento2_db > magento2_db-20201110.sql 
+ mysqldump ---single-transaction -u magento2_user -p magento2_db > magento2_db-20201110.sql 
 
- # mysqldump -u magento2_user -p magento2_db | gzip > magento2_db-20201110.sql.gz 
+ mysqldump -u magento2_user -p magento2_db | gzip > magento2_db-20201110.sql.gz 
 
 ```
 
@@ -121,7 +121,7 @@ Change password
 
 ```sql
 
- # ALTER USER magento2_user@localhost IDENTIFIED BY 'password123'; 
+ ALTER USER magento2_user@localhost IDENTIFIED BY 'password123'; 
 
 ```
 
@@ -206,7 +206,7 @@ Import database
 
 ```bash
 
-# cat /home/magento_user/Backup/db-bkp-20210204.sql | mysql -u root -pPass123 db1_new
+ cat /home/magento_user/Backup/db-bkp-20210204.sql | mysql -u root -pPass123 db1_new
 
 ```
 
