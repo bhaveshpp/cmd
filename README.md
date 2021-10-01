@@ -2,13 +2,20 @@
 
 ## Recently used
 
+Admin user cerate
+
+```bash
+ php bin/magento admin:user:create --admin-user='dev' --admin-password='password123' --admin-email='dev@gmail.com' --admin-firstname='Admin' --admin-lastname='dev'
+```
+
+
 ### Backup Command 
 
 Code
 
 ```bash
 
-# zip -r code-20210202.zip app/ bin/ dev/ lib/ phpserver/ setup/ vendor/ .htaccess composer.json composer.lock index.php .user.ini pub/ -x pub/media/**\* pub/static/frontend/**\* pub/static/adminhtml/**\*
+ zip -r code-20210202.zip app/ bin/ dev/ lib/ phpserver/ setup/ vendor/ .htaccess composer.json composer.lock index.php .user.ini pub/ -x pub/media/**\* pub/static/frontend/**\* pub/static/adminhtml/**\*
 
 ```
 
@@ -84,7 +91,7 @@ Find string
 
  grep -Rni "lol" ./app/code/ 
  
-# grep -rnw "gabarit-center" --include=*.{phtml} app/ 
+ grep -rnw "gabarit-center" --include=*.{phtml} app/ 
 
 ```
 
