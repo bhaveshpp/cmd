@@ -46,3 +46,13 @@ tar -czvf multi_dump-20210804.tar.gz \
 . && echo OK
 
 ```
+
+## Tee command
+
+read from standard input and write to standard output
+
+```/bin/bash
+
+cat page34.html | tee page35.html page36.html page37.html page38.html page39.html page40.html page41.html page42.html page43.html page44.html page45.html page46.html page47.html page48.html page49.html page50.html page51.html page52.html page53.html page54.html page55.html page56.html page57.html page58.html page59.html page60.html page61.html page62.html page63.html page64.html page65.html page66.html page67.html page68.html
+
+```
