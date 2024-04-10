@@ -106,6 +106,12 @@ Dump mysql database
  mysqldump -u magento2_user -p magento2_db | gzip > magento2_db-20201110.sql.gz 
 ```
 
+Dump mysql table
+
+```bash 
+ mysqldump -u root -prootroot dbname_02042024 prx_jp_pricing_breakup > dump_file.sql
+```
+
 Create new user and assign permission
 
 ```sql
