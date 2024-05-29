@@ -127,7 +127,8 @@ FLUSH PRIVILEGES;
 Change password
 
 ```sql
- ALTER USER magento2_user@localhost IDENTIFIED BY 'password123'; 
+ ALTER USER magento2_user@localhost IDENTIFIED BY 'password123';
+ ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'kZ6Ue8CmT2zK7yanYNEAPV';
 ```
 
 Check user permission
