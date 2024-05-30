@@ -213,3 +213,10 @@ composer2 install --ignore-platform-reqs
 composer2 dump-autoload -o
 ```
 
+## SED
+
+```bash
+
+sed -i 's/fastcgi_backend/fastcgi_backend_9074/g' nginx.conf.sample
+
+```
