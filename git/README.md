@@ -1,5 +1,12 @@
 # Git
 
+## Rallback file changes.
+
+```bash
+git checkout HEAD -- composer.json
+
+```
+
 ## Delete commit
 
 ```bash
