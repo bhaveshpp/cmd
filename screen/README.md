@@ -22,12 +22,11 @@ screen -r 685
 
 Function  | Shortcut
 ------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell 
 Detach Screen |	[ctrl + a] + d
 Quit/Kill Screen |	[ ctrl + a ] + k
 Switch to Next |	[ ctrl + a ] + n
 Switch to Previous |	[ ctrl + a ] + p
 All Keybindings |	[ ctrl + a ] + ?
+
 
 Thank you.
