@@ -21,6 +21,22 @@ then
 git push origin HEAD --force
 ```
 
+## Moving a sub-directory to a new repo with history
+
+```
+git clone git@bitbucket.org:seepossible/projectx.git
+git remote rm origin
+git filter-branch --subdirectory-filter app/code/SeePossible/MTPdfUrdTransaction -- --all
+mv * ~/Documents/seepossible/spmodule-urd-transaction-pdf/
+rm -rf ~/Documents/seepossible/spmodule-urd-transaction-pdf/.git
+mv .git ~/Documents/seepossible/spmodule-urd-transaction-pdf/
+cd ~/Documents/seepossible/spmodule-urd-transaction-pdf/
+git remote add origin git@bitbucket.org:seepossible/spmodule-urd-transaction-pdf.git
+git push --set-upstream origin master
+
+```
+
+
 ## Moved my changes to a new repository with its history.
 
 ```
