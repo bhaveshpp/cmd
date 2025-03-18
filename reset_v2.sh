@@ -1,4 +1,3 @@
-```bash
 #!/bin/bash
 
 for product in IntelliJIdea WebStorm DataGrip PhpStorm CLion PyCharm GoLand RubyMine Rider; do
@@ -32,4 +31,3 @@ killall cfprefsd
 
 echo
 echo "That's it, enjoy ;)"
-```
