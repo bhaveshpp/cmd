@@ -7,6 +7,23 @@ git checkout HEAD -- composer.json
 
 ```
 
+## Force checkout branch by reverting local file changes
+
+```bash
+
+rm -rf app/code app/design client* patches lib dev setup phpserver
+
+git checkout HEAD -- composer.lock composer.json client_extensions_resolver.sh
+
+git checkout HEAD -- app/code app/design client* patches lib dev setup composer.json composer.lock
+
+git checkout HEAD -- app client* patches lib dev setup phpserver pub composer.json composer.lock nginx.conf.sample package.json.sample
+git checkout HEAD -- app "client*" patches lib dev setup phpserver pub composer.json composer.lock nginx.conf.sample package.json.sample
+
+git pull origin master-lumalume
+
+```
+
 ## Delete commit
 
 ```bash
