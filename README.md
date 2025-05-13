@@ -103,7 +103,9 @@ Dump mysql database
 
  mysqldump ---single-transaction -u magento2_user -p magento2_db > magento2_db-20201110.sql 
 
- mysqldump -u magento2_user -p magento2_db | gzip > magento2_db-20201110.sql.gz 
+ mysqldump -u magento2_user -p magento2_db | gzip > magento2_db-20201110.sql.gz
+
+ mysqldump -u root -p --all-databases > /var/mysqldump/all_databases.sql
 ```
 
 Dump mysql table
